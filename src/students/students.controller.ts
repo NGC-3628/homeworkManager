@@ -17,6 +17,11 @@ export class StudentsController {
     return this.studentsService.findAll();
   }
 
+  @Get('seed')
+  seed() {
+    return this.studentsService.seedDatabase();
+  }
+
   @Get('search')
   search(@Query('q') q: string) { // <-- Ahora Query sí existe
     return this.studentsService.searchStudents(q);
